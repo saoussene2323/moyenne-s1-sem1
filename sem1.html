@@ -198,14 +198,14 @@
         <input type="number" id="ing_web" step="0.01">
     </div>
 
-    <button onclick="calculateAverage()">حساب المعدل</button>
+    <button onclick="calculateAverage()">Calcule la moyenne</button>
 
     <div class="result" id="result"></div>
 </div>
 
 <script>
     function calculateAverage() {
-        // الحصول على القيم من الحقول
+        
         const td_pe = parseFloat(document.getElementById('td_pe').value) || 0;
         const tp_pe = parseFloat(document.getElementById('tp_pe').value) || 0;
         const exmn_pe = parseFloat(document.getElementById('exmn_pe').value) || 0;
@@ -229,18 +229,18 @@
         const expression = parseFloat(document.getElementById('expression').value) || 0;
         const ing_web = parseFloat(document.getElementById('ing_web').value) || 0;
 
-        // حساب النقاط
+     
         const note_pe = ((tp_pe + td_pe) / 2 + exmn_pe) / 2;
         const note_sd = (tp_sd + exmn_sd) / 2;
         const note_bdd = ((tp_bdd + td_bdd) / 2) * 0.4 + exmn_bdd * 0.6;
         const note_gl = ((tp_gl + td_gl) / 2 + exmn_gl) / 2;
         const note_ql = (td_ql + exmn_ql) / 2;
 
-        // حساب المعدل
+    
         const moy = (note_pe * 4 + note_gl * 3 + note_bdd * 2 + note_ql * 2 + note_sd * 2 + comm + anglais + expression + ing_web) / 17;
 
-        // عرض النتيجة
-        document.getElementById('result').innerText = `المعدل النهائي: ${moy.toFixed(2)}`;
+      
+        document.getElementById('result').innerText = `${moy.toFixed(2)}`;
     }
 </script>
 
